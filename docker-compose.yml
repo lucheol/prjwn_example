@@ -1,0 +1,156 @@
+version: '3.7'
+
+services:
+
+  django-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    restart: always
+    hostname: django-app
+    env_file:
+      - app.env
+    environment:
+      - APP_ENV=dev
+      - APP_VERSION=local
+      - DEBUG_PYCHARM=$DEBUG_PYCHARM
+      - DEBUG_CELERY=$DEBUG_CELERY
+      - USE_SILK=$USE_SILK
+    ports:
+      - 8000:9110
+    volumes:
+      - ./code:/code/
+      - ./var/db-backup:/db-backup/
+    entrypoint: ['sh', '/code/run-django-local.sh']
+    networks:
+      - www-network
+      - db-network
+
+  django-app-maintenance:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    restart: always
+    hostname: django-app-maintenance
+    env_file:
+      - app.env
+    environment:
+      - APP_ENV=dev
+      - APP_VERSION=local
+    volumes:
+      - ./code:/code/
+      - ./var/db-backup:/db-backup/
+    entrypoint: ['tail', '-f', '/dev/null']
+    networks:
+      - www-network
+      - db-network
+
+#  redis:
+#    image: redis:5.0.3
+#    hostname: redis
+#    expose:
+#      - 6379
+#    networks:
+#      - www-network
+#      - db-network
+#
+#  celery-default:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile.local
+#    hostname: celery-defaul-server
+#    entrypoint: ['sh', '/code/run-celery.sh']
+#    env_file:
+#      - app.env
+#    environment:
+#      - APP_ENV=dev
+#      - APP_VERSION=local
+#      - WORKER_GROUP_NAME=CeleryWorker-default
+#      - MIN_CONCURRENCY=8
+#      - MAX_CONCURRENCY=16
+#      - MEMORY_LIMIT=1960000 # 2GB
+#      - QUEUES=default,reports,scheduling
+#      - C_FORCE_ROOT=true
+#    volumes:
+#      - ./code:/code/
+#    depends_on:
+#      - redis
+#    networks:
+#      - www-network
+#      - db-network
+#
+#  celery-beat:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile.local
+#    hostname: celery-beat-server
+#    entrypoint: ['sh', '/code/run-celery-beat.sh']
+#    env_file:
+#      - app.env
+#    environment:
+#      - APP_ENV=dev
+#      - APP_VERSION=local
+#    volumes:
+#      - ./code:/code/
+#    depends_on:
+#      - celery-default
+#    networks:
+#      - www-network
+#      - db-network
+#
+#  flower:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile.local
+#    hostname: flower-server
+#    entrypoint: ['sh', '/code/run-flower.sh']
+#    env_file:
+#      - app.env
+#    volumes:
+#      - ./code:/code/
+#    environment:
+#      - APP_ENV=dev
+#      - APP_VERSION=local
+#    depends_on:
+#      - celery-default
+#    ports:
+#      - "8005:5555"
+#    networks:
+#      - www-network
+#      - db-network
+
+  database-postgres-dev:
+    image: crunchydata/crunchy-postgres-gis:centos7-12.5-3.0-4.4.2
+    hostname: database-postgres-dev
+    env_file:
+      - database.env
+    environment:
+      - PG_MODE=primary
+      - PG_PRIMARY_PORT=5432
+      - MAX_CONNECTIONS=100
+      - SHARED_BUFFERS=4GB
+      - WORK_MEM=10485kB
+      - MAX_WAL_SENDERS=5
+    ports:
+      - "8008:5432"
+    volumes:
+      - db-data:/pgdata
+    networks:
+      - db-network
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    ports:
+      - "9000:9000"
+    command: -H unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer-data:/data
+
+volumes:
+  portainer-data:
+  db-data:
+
+networks:
+  db-network:
+  www-network:

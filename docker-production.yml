@@ -1,0 +1,100 @@
+version: '3.5'
+
+services:
+
+  django-app:
+    build: .
+    restart: always
+    hostname: django-app
+    env_file:
+      - app.env
+    environment:
+      - APP_ENV=production
+      - APP_VERSION=${APP_VERSION:-latest}
+    volumes:
+      - ./code:/code/
+      - /dev/shm:/dev/shm
+      - /tmp:/tmp
+    entrypoint: ['sh', '/code/run-django.sh']
+    networks:
+      - www-network
+      - db-network
+    healthcheck:
+      test: curl -f http://127.0.0.1:9110 || exit 1
+      interval: 1m
+      timeout: 15s
+      retries: 5
+      start_period: 2m
+
+  django-app-maintenance:
+    build: .
+    restart: always
+    hostname: django-app-maintenance
+    env_file:
+      - app.env
+    environment:
+      - APP_ENV=production
+      - APP_VERSION=${APP_VERSION:-latest}
+    volumes:
+      - ./code:/code/
+      - /dev/shm:/dev/shm
+      - /tmp:/tmp
+    entrypoint: ['tail', '-f', '/dev/null']
+    networks:
+      - www-network
+      - db-network
+
+  nginx:
+    image: nginx:latest
+    hostname: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./etc/nginx/conf.d:/etc/nginx/conf.d/
+      - ./etc/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./log/nginx:/var/log/nginx
+      - ./code/media:/var/www/media
+      - ./code/static:/var/www/static
+      - ./etc/certs:/etc/certs
+      - /tmp:/tmp
+    networks:
+      - www-network
+    depends_on:
+      - django-app
+
+  database-postgres-production:
+    image: crunchydata/crunchy-postgres-gis:centos7-12.5-3.0-4.4.2
+    hostname: database-postgres-production
+    env_file:
+      - database.env
+    environment:
+      - PG_MODE=primary
+      - PG_PRIMARY_PORT=5432
+      - MAX_CONNECTIONS=100
+      - SHARED_BUFFERS=4GB
+      - WORK_MEM=10485kB
+      - MAX_WAL_SENDERS=5
+    ports:
+      - "8008:5432"
+    volumes:
+      - db-data:/pgdata
+    networks:
+      - db-network
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    ports:
+      - "9000:9000"
+    command: -H unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer-data:/data
+
+volumes:
+  portainer-data:
+  db-data:
+
+networks:
+  www-network:
+  db-network:

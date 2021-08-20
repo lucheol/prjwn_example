@@ -1,0 +1,41 @@
+# Basic exclusions
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.log
+.idea/
+.DS_Store
+
+!.gitkeep
+
+*.env
+
+# Logs
+# ----
+/log/*
+/log/nginx/*
+/var/db-backup/*
+
+# Media and Static
+# ----------------
+
+/code/media/*
+/code/static/*
+
+# CELERY Beat runtime files
+# -------------------------
+
+/code/celerybeat-schedule
+/code/celerybeat.pid
+
+/code/proj/maintenance_mode_state.txt
+
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.pytest_cache/
+*.sql

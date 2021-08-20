@@ -1,0 +1,12 @@
+-r requirements.txt
+django-silk
+coverage
+django_coverage_plugin
+pytest-django
+pytest-cov
+black
+flake8
+pydevd_pycharm~=203.7717.65
+invoke
+jedi
+pudb

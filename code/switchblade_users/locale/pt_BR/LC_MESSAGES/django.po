@@ -1,0 +1,401 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-13 12:13-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: switchblade_users/admin.py:25
+msgid "Personal Information"
+msgstr "Informações Pessoais"
+
+#: switchblade_users/admin.py:26
+msgid "Permissions"
+msgstr "Permissões"
+
+#: switchblade_users/admin.py:28
+msgid "Important Dates"
+msgstr "Datas importantes"
+
+#: switchblade_users/apis.py:28
+#, fuzzy
+#| msgid "Password successfully changed."
+msgid "Avatar successfully updated"
+msgstr "Senha alterada com sucesso."
+
+#: switchblade_users/filters.py:9
+msgid "Yes"
+msgstr "Sim"
+
+#: switchblade_users/filters.py:10
+msgid "No"
+msgstr "Não"
+
+#: switchblade_users/filters.py:19
+msgid "Name contains"
+msgstr "Nome contém"
+
+#: switchblade_users/filters.py:21
+msgid "User Admin"
+msgstr "Usuário Admin"
+
+#: switchblade_users/filters.py:23
+msgid "User Active"
+msgstr "Usuário Ativo"
+
+#: switchblade_users/forms.py:11 switchblade_users/forms.py:46
+#: switchblade_users/templates/auth/login.html:32
+msgid "Password"
+msgstr "Senha"
+
+#: switchblade_users/forms.py:13 switchblade_users/forms.py:48
+msgid "Password confirmation"
+msgstr "Confirmação de senha"
+
+#: switchblade_users/forms.py:25
+msgid "Must be unique and cannot be changed later"
+msgstr "Precisa ser único e não pode ser alterado depois"
+
+#: switchblade_users/forms.py:33 switchblade_users/forms.py:55
+msgid "Passwords does not match"
+msgstr "Senhas não conferem"
+
+#: switchblade_users/models.py:197
+msgid "First name"
+msgstr "Nome"
+
+#: switchblade_users/models.py:198
+msgid "Last name"
+msgstr "Sobrenome"
+
+#: switchblade_users/models.py:202
+#, fuzzy
+#| msgid "Last name"
+msgid "Last login"
+msgstr "Sobrenome"
+
+#: switchblade_users/models.py:203
+msgid "Creation date"
+msgstr "Data de criação"
+
+#: switchblade_users/models.py:208
+#, fuzzy
+#| msgid "User Active"
+msgid "Active"
+msgstr "Usuário Ativo"
+
+#: switchblade_users/models.py:209
+msgid "Staff"
+msgstr "Equipe"
+
+#: switchblade_users/models.py:210
+#, fuzzy
+#| msgid "User Admin"
+msgid "Admin"
+msgstr "Usuário Admin"
+
+#: switchblade_users/models.py:221 switchblade_users/views.py:145
+#: switchblade_users/views.py:160
+msgid "User"
+msgstr "Usuário"
+
+#: switchblade_users/models.py:222
+#: switchblade_users/templates/users/index.html:5
+#: switchblade_users/templates/users/index.html:9
+#: switchblade_users/views.py:104 switchblade_users/views.py:105
+msgid "Users"
+msgstr "Usuários"
+
+#: switchblade_users/tables.py:10
+msgid "Name"
+msgstr "Nome"
+
+#: switchblade_users/templates/auth/login.html:24
+msgid "Sign in to start your session"
+msgstr "Entre para iniciar sua sessão"
+
+#: switchblade_users/templates/auth/login.html:28
+msgid "Email"
+msgstr "Email"
+
+#: switchblade_users/templates/auth/login.html:37
+msgid "User or password invalid!"
+msgstr "Usuário ou senha inválidos!"
+
+#: switchblade_users/templates/auth/login.html:42
+msgid "I forgot my password"
+msgstr "Esqueci minha senha"
+
+#: switchblade_users/templates/auth/login.html:46
+msgid "Sign In"
+msgstr "Entrar"
+
+#: switchblade_users/templates/auth/password_change.html:17
+#, fuzzy
+#| msgid ""
+#| "Please enter your old password, for security's sake, and then enter your "
+#| "new password twice so we can verify you typed it in correctly"
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr "Por favor informe sua senha antiga e a nova senha"
+
+#: switchblade_users/templates/auth/password_change.html:26
+#: switchblade_users/templates/auth/password_reset_confirm.html:25
+msgid "Change my password"
+msgstr "Alterar minha senha"
+
+#: switchblade_users/templates/auth/password_change_done.html:13
+msgid "Password Changed"
+msgstr "Senha alterada"
+
+#: switchblade_users/templates/auth/password_change_done.html:14
+msgid "Your password was changed successfully."
+msgstr "Sua senha foi alterada com sucesso."
+
+#: switchblade_users/templates/auth/password_change_done.html:19
+msgid "Go to dashboard"
+msgstr "Ir para a página inicial"
+
+#: switchblade_users/templates/auth/password_reset.html:18
+msgid "Forgotten your password?"
+msgstr "Esqueceu senha senha?"
+
+#: switchblade_users/templates/auth/password_reset.html:19
+msgid ""
+"Enter your email address below, and we'll email instructions for setting a "
+"new one."
+msgstr "Informe seu email e enviaremos as instruções para recuperar sua senha."
+
+#: switchblade_users/templates/auth/password_reset.html:27
+msgid "Recovery password"
+msgstr "Recuperar senha"
+
+#: switchblade_users/templates/auth/password_reset_complete.html:19
+msgid "Your password has been set."
+msgstr "Senha alterada."
+
+#: switchblade_users/templates/auth/password_reset_complete.html:20
+msgid "You may go ahead and log in now."
+msgstr "Faça o login novamente"
+
+#: switchblade_users/templates/auth/password_reset_complete.html:25
+msgid "Log in"
+msgstr "Entrar"
+
+#: switchblade_users/templates/auth/password_reset_confirm.html:20
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr "Informe sua senha duas vezes para verificarmos se está correta."
+
+#: switchblade_users/templates/auth/password_reset_confirm.html:29
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr "Link inválido. Repita o processo."
+
+#: switchblade_users/templates/auth/password_reset_done.html:17
+msgid "Password reset sent"
+msgstr "Recuperação de senha enviada"
+
+#: switchblade_users/templates/auth/password_reset_done.html:19
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+"Enviamos as instruções para o seu email. Se uma conta com este email "
+"existir, você receberá os detalhes."
+
+#: switchblade_users/templates/auth/password_reset_done.html:20
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+"Se você não recebeu o email, verifique se informou o email correto e "
+"verifique sua caixa de spam."
+
+#: switchblade_users/templates/users/change_password.html:11
+#: switchblade_users/templates/users/change_password.html:39
+#: switchblade_users/templates/users/change_password.html:55
+#: switchblade_users/views.py:122
+msgid "Change password"
+msgstr "Alterar senha"
+
+#: switchblade_users/templates/users/change_password.html:18
+msgid "Changing password for"
+msgstr "Alterando senha para"
+
+#: switchblade_users/templates/users/change_password.html:37
+#: switchblade_users/templates/users/roles.html:58
+#: switchblade_users/templates/users/update_avatar.html:48
+#: switchblade_users/templates/users/user_profile_change.html:41
+msgid "Back"
+msgstr "Voltar"
+
+#: switchblade_users/templates/users/change_password.html:59
+#, fuzzy
+#| msgid "Change password"
+msgid "Set new password"
+msgstr "Alterar senha"
+
+#: switchblade_users/templates/users/roles.html:12
+#: switchblade_users/templates/users/roles.html:16
+#: switchblade_users/views.py:184 switchblade_users/views.py:185
+#: switchblade_users/views.py:201 switchblade_users/views.py:210
+msgid "Roles"
+msgstr "Perfis"
+
+#: switchblade_users/templates/users/roles.html:33
+msgid "Available resources"
+msgstr "Recursos disponíveis"
+
+#: switchblade_users/templates/users/roles.html:63
+#: switchblade_users/templates/users/update_avatar.html:50
+msgid "Save"
+msgstr "Salvar"
+
+#: switchblade_users/templates/users/update_avatar.html:10
+msgid "Please enter your photo."
+msgstr "Enviar imagem"
+
+#: switchblade_users/templates/users/update_avatar.html:17
+msgid "Actual Image"
+msgstr "Imagem atual"
+
+#: switchblade_users/templates/users/update_avatar.html:27
+msgid "Upload Image"
+msgstr "Enviar imagem"
+
+#: switchblade_users/templates/users/update_avatar.html:28
+msgid "Max upload file size: 500KB"
+msgstr "Limite de upload: 500KB"
+
+#: switchblade_users/templates/users/update_avatar.html:35
+msgid "New Image"
+msgstr "Nova imagem"
+
+#: switchblade_users/templates/users/update_avatar.html:42
+#, fuzzy
+#| msgid "Upload Image"
+msgid "No image"
+msgstr "Sem imagem"
+
+#: switchblade_users/templates/users/update_avatar.html:74
+#: switchblade_users/templates/users/update_avatar.html:78
+#: switchblade_users/views.py:89
+msgid "Update Avatar"
+msgstr "Atualizar Avatar"
+
+#: switchblade_users/templates/users/user_autocomplete.html:12
+msgid "Edit person"
+msgstr "Editar cadastro"
+
+#: switchblade_users/templates/users/user_profile_change.html:7
+#, fuzzy
+#| msgid "User Detail"
+msgid "User Profile"
+msgstr "Detalhe do Usuário"
+
+#: switchblade_users/templates/users/user_profile_change.html:11
+msgid "Change Profile"
+msgstr "Alterar meu perfil"
+
+#: switchblade_users/templates/users/user_profile_change.html:18
+msgid "Please update your personal info"
+msgstr "Atualize suas informações pessoais"
+
+#: switchblade_users/templates/users/user_profile_change.html:43
+msgid "Change my profile"
+msgstr "Alterar meu perfil"
+
+#: switchblade_users/urls.py:51
+#, fuzzy
+#| msgid "Change password"
+msgid "Change Password"
+msgstr "Alterar senha"
+
+#: switchblade_users/views.py:58
+msgid "Personal Info"
+msgstr "Informações Pessoais"
+
+#: switchblade_users/views.py:107
+msgid "New User"
+msgstr "Novo Usuário"
+
+#: switchblade_users/views.py:135
+msgid "User Detail"
+msgstr "Detalhe do Usuário"
+
+#: switchblade_users/views.py:136
+msgid "User detail"
+msgstr "Detalhe do usuário"
+
+#: switchblade_users/views.py:146
+msgid "New user"
+msgstr "Novo usuário"
+
+#: switchblade_users/views.py:154
+msgid "User created successfully."
+msgstr "Usuário criado com sucesso."
+
+#: switchblade_users/views.py:161
+msgid "Edit user"
+msgstr "Editar usuário"
+
+#: switchblade_users/views.py:165
+msgid "User updated successfully"
+msgstr "Usuário atualizado com sucesso"
+
+#: switchblade_users/views.py:173
+msgid "User deleted successfully"
+msgstr "Usuário removido com sucesso"
+
+#: switchblade_users/views.py:187
+msgid "New role"
+msgstr "Novo perfil"
+
+#: switchblade_users/views.py:202
+msgid "Role detail"
+msgstr "Detalhe do perfil"
+
+#: switchblade_users/views.py:211
+msgid "Create new Role"
+msgstr "Criar novo Perfil"
+
+#: switchblade_users/views.py:216
+msgid "Role created successfully. Update role to select permissions."
+msgstr "Perfil criado com sucesso. "
+
+#: switchblade_users/views.py:265
+msgid "Role updated successfully."
+msgstr "Perfil atualizado com sucesso."
+
+#: switchblade_users/views.py:268
+msgid "Something is wrong. Please update again."
+msgstr "Algo deu errado. Tente novamente."
+
+#: switchblade_users/views.py:274
+msgid "Role deleted successfully."
+msgstr "Perfil removido com sucesso."
+
+#: switchblade_users/views.py:277
+msgid "Delete role"
+msgstr "Remover perfil"
+
+#: switchblade_users/views.py:328
+msgid "Password successfully changed."
+msgstr "Senha alterada com sucesso."

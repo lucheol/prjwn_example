@@ -1,0 +1,17 @@
+[flake8]
+extend-ignore = E203, E266, E501, W503, W504, E731
+# line length is intentionally set to 80 here because black uses Bugbear
+# See https://github.com/psf/black/blob/master/docs/the_black_code_style.md#line-length for more details
+max-line-length = 80
+select = B,C,E,F,W,T4,B9
+exclude =
+    .git,
+    __pycache__,
+    old,
+    build,
+    dist,
+    static,
+    static_files,
+    media
+per-file-ignores =
+  settings.py:F401,F403
